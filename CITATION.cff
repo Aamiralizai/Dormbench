@@ -12,9 +12,15 @@ license: MIT
 version: 0.3.1
 date-released: "2026-11-04"
 repository-code: "https://github.com/Aamiralizai/Dormbench"
-# TODO before archiving a release: replace with the actual author list.
+url: "https://github.com/Aamiralizai/Dormbench"
+# `name` matches the GitHub account and the commit identity. Replace it with the
+# full name, add given-names/family-names and an ORCID, and append co-authors
+# before the paper is published; GitHub renders this block as "Cite this
+# repository". affiliation is inferred from the commit email domain.
 authors:
-  - name: "The DormBench authors"
+  - name: "Aamiralizai"
+    affiliation: "Shanghai Jiao Tong University"
+    alias: "Aamiralizai"
 keywords:
   - breast cancer
   - tumour dormancy
