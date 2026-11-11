@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the manuscript and this repository."
+title: "dormbench: compartment attribution of breast-cancer dormancy signatures"
+abstract: >-
+  A reproducible pipeline for benchmarking transcriptional dormancy signatures
+  in ER-positive breast cancer. It scores direction-resolved signatures against
+  matched nulls, attributes them to single-cell compartments with donor-level
+  paired inference, validates them in independent and spatial data, and tests
+  their incremental prognostic value beyond CTS5.
+type: software
+license: MIT
+version: 0.3.1
+date-released: "2026-11-04"
+repository-code: "https://github.com/Aamiralizai/Dormbench"
+# TODO before archiving a release: replace with the actual author list.
+authors:
+  - name: "The DormBench authors"
+keywords:
+  - breast cancer
+  - tumour dormancy
+  - endocrine therapy
+  - single-cell RNA sequencing
+  - gene signatures
+  - reproducibility

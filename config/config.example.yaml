@@ -1,0 +1,43 @@
+# dormbench configuration
+# Data lives outside the repo. Edit data_root and nothing else should need changing.
+
+paths:
+  # Windows: use forward slashes, they work fine in Python
+  data_root: "/path/to/your/data"   # edit this to your data location
+
+  atlas_dir: "GSE176078"        # relative to data_root
+  metabric_dir: "METABRIC"
+  scanb_dir: "GSE96058"
+  tcga_dir: "TCGA-BRCA"
+  # Paired on-treatment cohort. GSE111563 + GSE59515 + GSE55374 are the three
+  # accessions of ONE study (Selli et al. 2019, 62 patients, extended
+  # letrozole); wp6 merges the siblings automatically. Do NOT point this at
+  # GSE105777: POETIC is a separate 2-week study and pooling it with the
+  # Edinburgh cohort mixes treatment durations. Analyse POETIC on its own with
+  #   dormbench wp6 --series-dir <...>/GSE105777 --no-merge --tag poetic
+  # POETIC randomised sampling control (157 treated, 56 untreated)
+  poetic_sampling_control_dir: "GSE105777"
+  # extended-letrozole cohort (62 patients, three accessions)
+  extended_letrozole_dir: "GSE111563"   # + GSE59515 + GSE55374
+  rosano_dir: "rosano"          # put the supplementary xlsx files here
+
+  # DepMap/CCLE. Absolute path is fine — it need not sit under data_root.
+  depmap_dir: ""                 # optional: DepMap/CCLE download directory
+
+  # relative to the package root
+  results: "results"
+  figures: "figures"
+  logs: "logs"
+  processed: "data_processed"
+
+# Clinical subtypes counted as ER+ (matched case-insensitively as substrings)
+er_positive_labels:
+  - "ER+"
+  - "luminal"
+  - "LumA"
+  - "LumB"
+
+analysis:
+  random_seed: 42
+  min_genes_per_cell: 200
+  min_cells_per_gene: 3

@@ -1,0 +1,16 @@
+data_processed/
+results/*
+figures/*
+logs/*
+!*/.gitkeep
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+config/config.yaml
+figures_combined/
+.pytest_cache/
+build/
+dist/
+.vscode/
+*.zip

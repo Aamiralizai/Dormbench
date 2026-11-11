@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dormbench"
+version = "0.3.1"
+description = "Compartment attribution of dormancy signatures in ER+ breast cancer"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "The DormBench authors" }]
+keywords = ["breast cancer", "tumour dormancy", "single-cell", "gene signatures"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy", "pandas", "scipy", "pyyaml", "scikit-learn", "statsmodels",
+    "anndata", "scanpy", "matplotlib", "openpyxl", "requests", "certifi",
+    # used by the survival steps (wp4s, wp8); without it a clean install
+    # cannot run the late-recurrence analysis at all
+    "lifelines",
+]
+
+[project.optional-dependencies]
+scoring = ["decoupler"]
+dev = ["pytest"]
+
+[project.scripts]
+dormbench = "dormbench.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Aamiralizai/Dormbench"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Resolve the src/ layout without requiring an editable install first, so that
+# a bare `python -m pytest -q` works from a fresh clone.
+pythonpath = ["src"]
